@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) FEPopupMenuController *popupMenuController;
+
 @end
 
 @implementation ViewController
@@ -19,14 +21,18 @@
     [super viewDidLoad];
 
     FEPopupMenuItem *item1 = [[FEPopupMenuItem alloc] initWithTitle:@"Item1" iconImage:nil action:^{
-        NSLog(@"item1...");
+        NSLog(@"selected item1...");
     }];
-    FEPopupMenuController *popupMenuController = [[FEPopupMenuController alloc] initWithItems:@[item1]];
+    self.popupMenuController = [[FEPopupMenuController alloc] initWithItems:@[item1]];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)popMenuAction:(UIBarButtonItem *)sender {
+    [self.popupMenuController showInViewController:self];
 }
 
 @end

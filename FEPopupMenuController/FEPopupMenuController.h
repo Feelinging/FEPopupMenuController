@@ -15,4 +15,7 @@
 
 - (instancetype)initWithItems:(NSArray *)items;
 
+- (void)showInViewController:(UIViewController *)viewController;
+- (void)dismiss;
+
 @end
