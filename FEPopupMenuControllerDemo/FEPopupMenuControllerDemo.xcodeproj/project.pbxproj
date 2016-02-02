@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B690B9C1C5B68A200A06C36 /* FEPopupMenuItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B690B9A1C5B68A200A06C36 /* FEPopupMenuItemCell.m */; };
+		0B690B9D1C5B68A200A06C36 /* FEPopupMenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B690B9B1C5B68A200A06C36 /* FEPopupMenuItemCell.xib */; };
 		0BBE730F1C5B483700DEF2EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBE730E1C5B483700DEF2EE /* main.m */; };
 		0BBE73121C5B483700DEF2EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBE73111C5B483700DEF2EE /* AppDelegate.m */; };
 		0BBE73151C5B483700DEF2EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBE73141C5B483700DEF2EE /* ViewController.m */; };
@@ -18,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B690B991C5B68A200A06C36 /* FEPopupMenuItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEPopupMenuItemCell.h; sourceTree = "<group>"; };
+		0B690B9A1C5B68A200A06C36 /* FEPopupMenuItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEPopupMenuItemCell.m; sourceTree = "<group>"; };
+		0B690B9B1C5B68A200A06C36 /* FEPopupMenuItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FEPopupMenuItemCell.xib; sourceTree = "<group>"; };
 		0BBE730A1C5B483700DEF2EE /* FEPopupMenuControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FEPopupMenuControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BBE730E1C5B483700DEF2EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0BBE73101C5B483700DEF2EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +98,9 @@
 				0BBE733B1C5B4F5A00DEF2EE /* FEPopupMenuController.m */,
 				0BBE733C1C5B4F5A00DEF2EE /* FEPopupMenuItem.h */,
 				0BBE733D1C5B4F5A00DEF2EE /* FEPopupMenuItem.m */,
+				0B690B991C5B68A200A06C36 /* FEPopupMenuItemCell.h */,
+				0B690B9A1C5B68A200A06C36 /* FEPopupMenuItemCell.m */,
+				0B690B9B1C5B68A200A06C36 /* FEPopupMenuItemCell.xib */,
 			);
 			name = FEPopupMenuController;
 			path = ../FEPopupMenuController;
@@ -158,6 +166,7 @@
 				0BBE731D1C5B483700DEF2EE /* LaunchScreen.storyboard in Resources */,
 				0BBE731A1C5B483700DEF2EE /* Assets.xcassets in Resources */,
 				0BBE73181C5B483700DEF2EE /* Main.storyboard in Resources */,
+				0B690B9D1C5B68A200A06C36 /* FEPopupMenuItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +182,7 @@
 				0BBE73121C5B483700DEF2EE /* AppDelegate.m in Sources */,
 				0BBE733E1C5B4F5A00DEF2EE /* FEPopupMenuController.m in Sources */,
 				0BBE730F1C5B483700DEF2EE /* main.m in Sources */,
+				0B690B9C1C5B68A200A06C36 /* FEPopupMenuItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
