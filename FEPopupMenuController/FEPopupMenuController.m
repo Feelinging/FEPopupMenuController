@@ -9,11 +9,12 @@
 #import "FEPopupMenuController.h"
 #import "FEPopupMenuItemCell.h"
 
-@interface FEPopupMenuController () <UITableViewDelegate,UITableViewDataSource>
+@interface FEPopupMenuController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, strong) UITapGestureRecognizer *tapBackgroundGestureRecognizer;
 @end
 
 @implementation FEPopupMenuController
@@ -21,6 +22,7 @@
 -(instancetype)initWithItems:(NSArray *)items{
     if (self = [super init]) {
         self.items = items;
+        self.automaticDismiss = YES;
     }
     return self;
 }
@@ -33,11 +35,12 @@
     self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.25];
     
     // tap background
-    UITapGestureRecognizer *tapBackgroundGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
-    [self.view addGestureRecognizer:tapBackgroundGestureRecognizer];
+    self.tapBackgroundGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
+    self.tapBackgroundGestureRecognizer.delegate = self;
+    [self.view addGestureRecognizer:self.tapBackgroundGestureRecognizer];
     
     // init contentView
-    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(160, 80, 130, 44 * [self.items count])];
+    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(220, 75, 130, 44 * [self.items count])];
     self.contentView.layer.cornerRadius = 8.0;
     self.contentView.clipsToBounds = YES;
     
@@ -102,6 +105,18 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    FEPopupMenuItem *item = self.items[indexPath.row];
+
+    // exec item action
+    if (item.action) {
+        item.action();
+    }
+
+    // automatic dismiis
+    if (self.automaticDismiss) {
+        [self dismiss];
+    }
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,6 +127,16 @@
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
+}
+
+#pragma mark UIGestureRecognizerDelegate
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if (gestureRecognizer == self.tapBackgroundGestureRecognizer && [touch.view isDescendantOfView:self.contentView]) {
+        return NO;
+    }
+    return YES;
 }
 
 @end

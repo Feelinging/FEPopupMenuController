@@ -13,9 +13,24 @@
 
 @property (nonatomic, strong) NSArray *items;
 
-- (instancetype)initWithItems:(NSArray *)items;
+/**
+ *  with FEPopupMenuItem init
+ */
+- (instancetype)initWithItems:(NSArray<FEPopupMenuItem *> *)items;
 
+/**
+ *  popup
+ */
 - (void)showInViewController:(UIViewController *)viewController;
+
+/**
+ *  hidden
+ */
 - (void)dismiss;
+
+/**
+ *  When selected a item will automatic dismiss the FEPopupMenuController, default is YES.
+ */
+@property (nonatomic, assign) BOOL automaticDismiss;
 
 @end
