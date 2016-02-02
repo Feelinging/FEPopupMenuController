@@ -13,10 +13,29 @@ typedef void(^FEPopupMenuItemActionBlock)(void);
 
 @interface FEPopupMenuItem : NSObject
 
+/**
+ *  init FEPopupMenuItem with title text and icon image
+ */
+- (instancetype)initWithTitle:(NSString *)title iconImage:(UIImage *)iconImage action:(FEPopupMenuItemActionBlock)action;
+
+/**
+ *  title of item
+ */
 @property (nonatomic, copy) NSString *title;
+
+/**
+ *  icon image of item
+ */
 @property (nonatomic, strong) UIImage *iconImage;
+
+/**
+ *  callback of item when selected
+ */
 @property (nonatomic, copy) FEPopupMenuItemActionBlock action;
 
-- (instancetype)initWithTitle:(NSString *)title iconImage:(UIImage *)iconImage action:(FEPopupMenuItemActionBlock)action;
+/**
+ *  the color of title in cell
+ */
+@property (nonatomic, strong) UIColor *titleColor;
 
 @end

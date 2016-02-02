@@ -11,7 +11,7 @@
 
 @interface FEPopupMenuController : UIViewController
 
-@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSArray<FEPopupMenuItem *> *items;
 
 /**
  *  with FEPopupMenuItem init
@@ -27,6 +27,8 @@
  *  hidden
  */
 - (void)dismiss;
+
+#pragma mark Custom Parameters
 
 /**
  *  When selected a item will automatic dismiss the FEPopupMenuController, default is YES.

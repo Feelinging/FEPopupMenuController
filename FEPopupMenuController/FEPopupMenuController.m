@@ -74,6 +74,9 @@
 #pragma mark show & dismiss
 
 -(void)showInViewController:(UIViewController *)viewController{
+    // reload
+    [self.tableView reloadData];
+    
     // present style
     if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0) {
         // iOS8+

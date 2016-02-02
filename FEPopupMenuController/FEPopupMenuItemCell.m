@@ -29,6 +29,13 @@
     
     // Title
     self.titleLabel.text = item.title;
+
+    // Title Color
+    if (item.titleColor) {
+        self.titleLabel.textColor = item.titleColor;
+    }else{
+        self.titleLabel.textColor = [UIColor colorWithRed:0.33 green:0.33 blue:0.33 alpha:1];
+    }
     
     // Icon
     if (item.iconImage) {

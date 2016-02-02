@@ -28,7 +28,7 @@
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="mfV-YN-MWX"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.33599759615384606" green="0.33599759615384606" blue="0.33599759615384606" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.33725490196078434" green="0.33725490196078434" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>

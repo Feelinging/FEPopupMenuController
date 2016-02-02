@@ -25,7 +25,14 @@
  */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleXALignmentConstraint;
 
+/**
+ *  identifier for cell
+ */
 + (NSString *)identifier;
+
+/**
+ *  fill the cell with item
+ */
 - (void)configCellWithItem:(FEPopupMenuItem *)item;
 
 @end
