@@ -35,6 +35,11 @@
     self.popupMenuController = [[FEPopupMenuController alloc] initWithItems:@[item1,item2,item3,item4]];
 }
 
+-(void)viewDidLayoutSubviews{
+    // for screen rotation
+    [self.popupMenuController moveContentViewToPosition:[self calculateMenuShowPoint]];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -44,8 +49,16 @@
  *  right top bar button action
  */
 - (IBAction)popMenuAction:(UIBarButtonItem *)sender {
-    CGPoint showPoint = CGPointMake(CGRectGetWidth(self.view.frame) - self.popupMenuController.contentViewWidth - 20, 64 + 10);
-    [self.popupMenuController showInViewController:self atPoint:showPoint];
+    // pop up
+    [self.popupMenuController showInViewController:self atPposition:[self calculateMenuShowPoint]];
+}
+
+/**
+ *  calculate the pop menu view postion
+ */
+- (CGPoint)calculateMenuShowPoint{
+    // get a position on screen (top right corner)
+    return CGPointMake(CGRectGetWidth(self.view.frame) - self.popupMenuController.contentViewWidth - 20, 64 + 10);;
 }
 
 @end

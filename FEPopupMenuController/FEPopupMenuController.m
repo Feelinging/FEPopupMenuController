@@ -77,11 +77,10 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
 
 #pragma mark show & dismiss
 
--(void)showInViewController:(UIViewController *)viewController atPoint:(CGPoint)point{
+-(void)showInViewController:(UIViewController *)viewController atPposition:(CGPoint)position{
     
     // postion
-    self.contentViewPosition = point;
-    self.contentView.frame = CGRectMake(point.x, point.y, self.contentViewWidth, self.contentView.frame.size.height);
+    [self moveContentViewToPosition:position];
     
     // reload
     [self.tableView reloadData];
@@ -100,6 +99,11 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
 
 -(void)dismiss{
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)moveContentViewToPosition:(CGPoint)position{
+    self.contentViewPosition = position;
+    self.contentView.frame = CGRectMake(position.x, position.y, self.contentViewWidth, self.contentView.frame.size.height);
 }
 
 #pragma mark UITableView

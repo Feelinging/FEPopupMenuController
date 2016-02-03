@@ -14,19 +14,24 @@
 @property (nonatomic, strong) NSArray<FEPopupMenuItem *> *items;
 
 /**
- *  with FEPopupMenuItem init
+ *  using FEPopupMenuItem init
  */
 - (instancetype)initWithItems:(NSArray<FEPopupMenuItem *> *)items;
 
 /**
- *  popup
+ *  popup the view controller
  */
-- (void)showInViewController:(UIViewController *)viewController atPoint:(CGPoint)point;
+- (void)showInViewController:(UIViewController *)viewController atPposition:(CGPoint)position;
 
 /**
- *  hidden
+ *  dismiss the view controller
  */
 - (void)dismiss;
+
+/**
+ *  move the content to new position
+ */
+- (void)moveContentViewToPosition:(CGPoint)position;
 
 #pragma mark Custom Parameters
 
