@@ -53,7 +53,9 @@ dismiss
 
 ### Cocoapods
 
-comming soon...
+```
+pod 'FEPopupMenuController'
+```
 
 ### Licence
 
