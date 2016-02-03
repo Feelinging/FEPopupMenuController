@@ -50,7 +50,7 @@
  */
 - (IBAction)popMenuAction:(UIBarButtonItem *)sender {
     // pop up
-    [self.popupMenuController showInViewController:self atPposition:[self calculateMenuShowPoint]];
+    [self.popupMenuController showInViewController:self atPosition:[self calculateMenuShowPoint]];
 }
 
 /**

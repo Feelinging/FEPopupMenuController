@@ -21,7 +21,7 @@
 /**
  *  popup the view controller
  */
-- (void)showInViewController:(UIViewController *)viewController atPposition:(CGPoint)position;
+- (void)showInViewController:(UIViewController *)viewController atPosition:(CGPoint)position;
 
 /**
  *  dismiss the view controller

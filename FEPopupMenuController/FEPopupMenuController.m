@@ -77,7 +77,7 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
 
 #pragma mark show & dismiss
 
--(void)showInViewController:(UIViewController *)viewController atPposition:(CGPoint)position{
+-(void)showInViewController:(UIViewController *)viewController atPosition:(CGPoint)position{
     
     // postion
     [self moveContentViewToPosition:position];
