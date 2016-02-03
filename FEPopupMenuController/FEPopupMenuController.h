@@ -21,7 +21,7 @@
 /**
  *  popup
  */
-- (void)showInViewController:(UIViewController *)viewController;
+- (void)showInViewController:(UIViewController *)viewController atPoint:(CGPoint)point;
 
 /**
  *  hidden
@@ -34,5 +34,15 @@
  *  When selected a item will automatic dismiss the FEPopupMenuController, default is YES.
  */
 @property (nonatomic, assign) BOOL automaticDismiss;
+
+/**
+ *  the content view width, default is 130.
+ */
+@property (nonatomic, assign) CGFloat contentViewWidth;
+
+/**
+ *  the content view position, default is (0,0)
+ */
+@property (nonatomic, assign) CGPoint contentViewPosition;
 
 @end

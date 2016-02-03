@@ -9,6 +9,8 @@
 #import "FEPopupMenuController.h"
 #import "FEPopupMenuItemCell.h"
 
+static const CGFloat kDefaultContentViewWidth = 130.0;
+
 @interface FEPopupMenuController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIView *contentView;
@@ -23,6 +25,8 @@
     if (self = [super init]) {
         self.items = items;
         self.automaticDismiss = YES;
+        self.contentViewWidth = kDefaultContentViewWidth;
+        self.contentViewPosition = CGPointMake(0,0);
     }
     return self;
 }
@@ -40,7 +44,7 @@
     [self.view addGestureRecognizer:self.tapBackgroundGestureRecognizer];
     
     // init contentView
-    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(220, 75, 130, 44 * [self.items count])];
+    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(self.contentViewPosition.x, self.contentViewPosition.y, self.contentViewWidth, 44 * [self.items count])];
     self.contentView.layer.cornerRadius = 8.0;
     self.contentView.clipsToBounds = YES;
     
@@ -73,7 +77,12 @@
 
 #pragma mark show & dismiss
 
--(void)showInViewController:(UIViewController *)viewController{
+-(void)showInViewController:(UIViewController *)viewController atPoint:(CGPoint)point{
+    
+    // postion
+    self.contentViewPosition = point;
+    self.contentView.frame = CGRectMake(point.x, point.y, self.contentViewWidth, self.contentView.frame.size.height);
+    
     // reload
     [self.tableView reloadData];
     

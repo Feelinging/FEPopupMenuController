@@ -40,8 +40,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ *  right top bar button action
+ */
 - (IBAction)popMenuAction:(UIBarButtonItem *)sender {
-    [self.popupMenuController showInViewController:self];
+    CGPoint showPoint = CGPointMake(CGRectGetWidth(self.view.frame) - self.popupMenuController.contentViewWidth - 20, 64 + 10);
+    [self.popupMenuController showInViewController:self atPoint:showPoint];
 }
 
 @end
