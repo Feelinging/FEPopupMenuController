@@ -51,7 +51,7 @@ dismiss
   
   You can call the `moveContentViewToPosition` method to change the location of the nemu in real time.(see demo)
 
-### Cocoapods
+### CocoaPods
 
 ```
 pod 'FEPopupMenuController'
