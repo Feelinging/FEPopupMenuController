@@ -122,16 +122,16 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    // automatic dismiss
+    if (self.automaticDismiss) {
+        [self dismiss];
+    }
+
     FEPopupMenuItem *item = self.items[indexPath.row];
 
     // exec item action
     if (item.action) {
         item.action();
-    }
-
-    // automatic dismiis
-    if (self.automaticDismiss) {
-        [self dismiss];
     }
 }
 
