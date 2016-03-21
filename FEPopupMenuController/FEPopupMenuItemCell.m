@@ -42,13 +42,13 @@
         self.iconImageview.image = item.iconImage;
         self.iconImageview.hidden = NO;
         
-        self.icon2titleSpacingConstraint.priority = UILayoutPriorityRequired;
+        self.icon2titleSpacingConstraint.priority = 999.0;
         self.titleXALignmentConstraint.priority = UILayoutPriorityDefaultHigh;
     }else{
         self.iconImageview.hidden = YES;
-
+        
+        self.titleXALignmentConstraint.priority = 999.0;
         self.icon2titleSpacingConstraint.priority = UILayoutPriorityDefaultHigh;
-        self.titleXALignmentConstraint.priority = UILayoutPriorityRequired;
     }
 }
 

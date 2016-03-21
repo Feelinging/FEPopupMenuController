@@ -91,9 +91,15 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
         self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
         self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     }else{
-        viewController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        // iOS7
+        UIViewController *root = viewController;
+        while (root.parentViewController) {
+            root = root.parentViewController;
+        }
+        root.modalPresentationStyle = UIModalPresentationCurrentContext;
     }
     
+    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [viewController presentViewController:self animated:YES completion:nil];
 }
 
