@@ -25,6 +25,10 @@
     return @"FEPopupMenuItemCell";
 }
 
++ (UINib *)nib{
+    return [UINib nibWithNibName:[self identifier] bundle:[NSBundle bundleForClass:[self class]]];
+}
+
 -(void)configCellWithItem:(FEPopupMenuItem *)item{
     
     // Title

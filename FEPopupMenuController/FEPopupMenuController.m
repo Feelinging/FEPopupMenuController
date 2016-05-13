@@ -50,7 +50,7 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
     
     // init TableView
     self.tableView = [[UITableView alloc] initWithFrame:self.contentView.bounds];
-    [self.tableView registerNib:[UINib nibWithNibName:@"FEPopupMenuItemCell" bundle:nil] forCellReuseIdentifier:[FEPopupMenuItemCell identifier]];
+    [self.tableView registerNib:[FEPopupMenuItemCell nib] forCellReuseIdentifier:[FEPopupMenuItemCell identifier]];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];

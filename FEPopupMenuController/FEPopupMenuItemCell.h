@@ -31,6 +31,11 @@
 + (NSString *)identifier;
 
 /**
+ *  nib
+ */
++ (UINib *)nib;
+
+/**
  *  fill the cell with item
  */
 - (void)configCellWithItem:(FEPopupMenuItem *)item;
