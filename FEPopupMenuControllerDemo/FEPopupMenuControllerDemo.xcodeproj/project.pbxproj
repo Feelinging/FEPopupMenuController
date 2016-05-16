@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B62DA0E1CE9727300EE684E /* FEPopupMenuControllerAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B62DA0D1CE9727300EE684E /* FEPopupMenuControllerAnimatedTransitioning.m */; };
 		0B690B9C1C5B68A200A06C36 /* FEPopupMenuItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B690B9A1C5B68A200A06C36 /* FEPopupMenuItemCell.m */; };
 		0B690B9D1C5B68A200A06C36 /* FEPopupMenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B690B9B1C5B68A200A06C36 /* FEPopupMenuItemCell.xib */; };
 		0BBE730F1C5B483700DEF2EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBE730E1C5B483700DEF2EE /* main.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B62DA0C1CE9727300EE684E /* FEPopupMenuControllerAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEPopupMenuControllerAnimatedTransitioning.h; sourceTree = "<group>"; };
+		0B62DA0D1CE9727300EE684E /* FEPopupMenuControllerAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEPopupMenuControllerAnimatedTransitioning.m; sourceTree = "<group>"; };
 		0B690B991C5B68A200A06C36 /* FEPopupMenuItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEPopupMenuItemCell.h; sourceTree = "<group>"; };
 		0B690B9A1C5B68A200A06C36 /* FEPopupMenuItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEPopupMenuItemCell.m; sourceTree = "<group>"; };
 		0B690B9B1C5B68A200A06C36 /* FEPopupMenuItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FEPopupMenuItemCell.xib; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 				0B690B991C5B68A200A06C36 /* FEPopupMenuItemCell.h */,
 				0B690B9A1C5B68A200A06C36 /* FEPopupMenuItemCell.m */,
 				0B690B9B1C5B68A200A06C36 /* FEPopupMenuItemCell.xib */,
+				0B62DA0C1CE9727300EE684E /* FEPopupMenuControllerAnimatedTransitioning.h */,
+				0B62DA0D1CE9727300EE684E /* FEPopupMenuControllerAnimatedTransitioning.m */,
 			);
 			name = FEPopupMenuController;
 			path = ../FEPopupMenuController;
@@ -178,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BBE733F1C5B4F5A00DEF2EE /* FEPopupMenuItem.m in Sources */,
+				0B62DA0E1CE9727300EE684E /* FEPopupMenuControllerAnimatedTransitioning.m in Sources */,
 				0BBE73151C5B483700DEF2EE /* ViewController.m in Sources */,
 				0BBE73121C5B483700DEF2EE /* AppDelegate.m in Sources */,
 				0BBE733E1C5B4F5A00DEF2EE /* FEPopupMenuController.m in Sources */,

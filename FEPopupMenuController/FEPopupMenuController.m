@@ -8,6 +8,7 @@
 
 #import "FEPopupMenuController.h"
 #import "FEPopupMenuItemCell.h"
+#import "FEPopupMenuControllerAnimatedTransitioning.h"
 
 static const CGFloat kDefaultContentViewWidth = 130.0;
 
@@ -86,20 +87,9 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
     [self.tableView reloadData];
     
     // present style
-    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0) {
-        // iOS8+
-        self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    }else{
-        // iOS7
-        UIViewController *root = viewController;
-        while (root.parentViewController) {
-            root = root.parentViewController;
-        }
-        root.modalPresentationStyle = UIModalPresentationCurrentContext;
-    }
-    
+    self.modalPresentationStyle = UIModalPresentationCustom;
     self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
     [viewController presentViewController:self animated:YES completion:nil];
 }
 
@@ -159,6 +149,22 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
         return NO;
     }
     return YES;
+}
+
+#pragma mark <UIViewControllerAnimatedTransitioning>
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    FEPopupMenuControllerAnimatedTransitioning *transitioning = [FEPopupMenuControllerAnimatedTransitioning new];
+    //    transitioning.presenting = YES;
+    return transitioning;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    FEPopupMenuControllerAnimatedTransitioning * transitioning = [FEPopupMenuControllerAnimatedTransitioning new];
+    //    transitioning.presenting = NO;
+    return transitioning;
 }
 
 @end
