@@ -87,9 +87,20 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
     [self.tableView reloadData];
     
     // present style
-    self.modalPresentationStyle = UIModalPresentationCustom;
-    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber_iOS_8_0) {
+        // iOS8+
+        self.modalPresentationStyle = UIModalPresentationCustom;
+        self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    }else{
+        // iOS7
+        UIViewController *root = viewController;
+        while (root.parentViewController) {
+            root = root.parentViewController;
+        }
+        root.modalPresentationStyle = UIModalPresentationCurrentContext;
+    }
     
+    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [viewController presentViewController:self animated:YES completion:nil];
 }
 
