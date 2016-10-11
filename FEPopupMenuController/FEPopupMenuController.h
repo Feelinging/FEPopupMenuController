@@ -61,11 +61,6 @@
 @property (nonatomic, assign) CGFloat contentViewCornerRadius;
 
 /**
- *  title Color of each line, default is 0x565656
- */
-@property (nonatomic, strong) UIColor *itemTitleColor;
-
-/**
  *  arrow view x position , default is 70% of contentViewWidth
  */
 @property (nonatomic, assign) CGFloat arrowX;

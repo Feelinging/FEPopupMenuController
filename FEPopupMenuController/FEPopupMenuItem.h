@@ -34,7 +34,7 @@ typedef void(^FEPopupMenuItemActionBlock)(void);
 @property (nonatomic, copy) FEPopupMenuItemActionBlock action;
 
 /**
- *  the color of title in cell
+ *  the color of title
  */
 @property (nonatomic, strong) UIColor *titleColor;
 

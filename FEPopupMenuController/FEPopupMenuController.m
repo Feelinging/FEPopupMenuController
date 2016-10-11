@@ -138,12 +138,6 @@ static const CGFloat kDefaultArrowHeight = 7.0;
     FEPopupMenuItemCell *cell = [tableView dequeueReusableCellWithIdentifier:[FEPopupMenuItemCell identifier]];
     FEPopupMenuItem *item = self.items[indexPath.row];
     [cell configCellWithItem:item];
-    
-    // config
-    if (self.itemTitleColor) {
-        cell.titleLabel.textColor = self.itemTitleColor;
-    }
-    
     return cell;
 }
 
