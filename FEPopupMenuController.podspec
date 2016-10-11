@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "FEPopupMenuController"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "A simple, elegant pop-up menu view."
   s.description  = <<-DESC
                     a easy to use,customization pop-up menu view.
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author             = { "isaced" => "isaced@163.com" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/Feelinging/FEPopupMenuController.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/Feelinging/FEPopupMenuController.git", :tag => "0.0.3" }
 
   s.source_files  = "FEPopupMenuController", "FEPopupMenuController/**/*.{h,m}"
   s.resource_bundle = { "FEPopupResource" => "FEPopupMenuController/**/*.xib" }
