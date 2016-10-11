@@ -43,6 +43,8 @@ dismiss
 
 ### Other
 
+you can customize everything
+
 - ##### change title color of each item
   
   You can set `titleColor` to change the title color of each FEPopupMenuItem, respectively.
@@ -50,6 +52,46 @@ dismiss
 - ##### Screen Rotation
   
   You can call the `moveContentViewToPosition` method to change the location of the nemu in real time.(see demo)
+
+#### more...
+
+```
+/**
+ *  When selected a item will automatic dismiss the FEPopupMenuController, default is YES.
+ */
+@property (nonatomic, assign) BOOL automaticDismiss;
+
+/**
+ *  the content view width, default is 130.
+ */
+@property (nonatomic, assign) CGFloat contentViewWidth;
+
+/**
+ *  the content view position, default is (0,0)
+ */
+@property (nonatomic, assign) CGPoint contentViewPosition;
+
+/**
+ *  the content view background color, default is white
+ */
+@property (nonatomic, strong) UIColor *contentViewBackgroundColor;
+
+/**
+ *  the content view corner radius, default is 8.0
+ */
+@property (nonatomic, assign) CGFloat contentViewCornerRadius;
+
+/**
+ *  arrow view x position , default is 70% of contentViewWidth
+ */
+@property (nonatomic, assign) CGFloat arrowX;
+
+/**
+ *  arrow of top on content view show or hidden, default is NO (hidden)
+ */
+@property (nonatomic, assign) BOOL isShowArrow;
+
+```
 
 ### CocoaPods
 
