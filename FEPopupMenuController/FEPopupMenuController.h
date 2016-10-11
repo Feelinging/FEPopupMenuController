@@ -50,4 +50,19 @@
  */
 @property (nonatomic, assign) CGPoint contentViewPosition;
 
+/**
+ *  the content view background color, default is white
+ */
+@property (nonatomic, strong) UIColor *contentViewBackgroundColor;
+
+/**
+ *  the content view corner radius, default is 8.0
+ */
+@property (nonatomic, assign) CGFloat contentViewCornerRadius;
+
+/**
+ *  title Color of each line, default is 0x565656
+ */
+@property (nonatomic, strong) UIColor *itemTitleColor;
+
 @end

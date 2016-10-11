@@ -30,6 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="Pr2-eR-Goo" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="12.5" id="NcT-pd-2CY"/>
                     <constraint firstItem="Pr2-eR-Goo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="TWl-oN-K4f"/>
@@ -37,6 +38,7 @@
                     <constraint firstItem="HST-GA-K37" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vmu-q0-ccC"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="iconImageview" destination="HST-GA-K37" id="qGA-ej-xNz"/>
                 <outlet property="titleLabel" destination="Pr2-eR-Goo" id="LXz-EP-SPp"/>

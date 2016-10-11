@@ -16,8 +16,8 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
 
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UITableView *tableView;
-
 @property (nonatomic, strong) UITapGestureRecognizer *tapBackgroundGestureRecognizer;
+
 @end
 
 @implementation FEPopupMenuController
@@ -28,6 +28,8 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
         self.automaticDismiss = YES;
         self.contentViewWidth = kDefaultContentViewWidth;
         self.contentViewPosition = CGPointMake(0,0);
+        self.contentViewBackgroundColor = [UIColor whiteColor];
+        self.contentViewCornerRadius = 8.0;
     }
     return self;
 }
@@ -45,8 +47,11 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
     [self.view addGestureRecognizer:self.tapBackgroundGestureRecognizer];
     
     // init contentView
-    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(self.contentViewPosition.x, self.contentViewPosition.y, self.contentViewWidth, 44 * [self.items count])];
-    self.contentView.layer.cornerRadius = 8.0;
+    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(self.contentViewPosition.x,
+                                                            self.contentViewPosition.y,
+                                                            self.contentViewWidth,
+                                                            44 * [self.items count])];
+    self.contentView.layer.cornerRadius = self.contentViewCornerRadius;
     self.contentView.clipsToBounds = YES;
     
     // init TableView
@@ -56,6 +61,7 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
     self.tableView.dataSource = self;
     self.tableView.separatorColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
     self.tableView.scrollEnabled = NO;
+    self.tableView.backgroundColor = self.contentViewBackgroundColor;
     
     if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
         [self.tableView setSeparatorInset:UIEdgeInsetsZero];
@@ -69,11 +75,6 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
     [self.view addSubview:self.contentView];
     
     [self.tableView reloadData];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark show & dismiss
@@ -123,6 +124,12 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
     FEPopupMenuItemCell *cell = [tableView dequeueReusableCellWithIdentifier:[FEPopupMenuItemCell identifier]];
     FEPopupMenuItem *item = self.items[indexPath.row];
     [cell configCellWithItem:item];
+    
+    // config
+    if (self.itemTitleColor) {
+        cell.titleLabel.textColor = self.itemTitleColor;
+    }
+    
     return cell;
 }
 
