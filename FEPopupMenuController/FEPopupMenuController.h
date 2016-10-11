@@ -11,17 +11,17 @@
 
 @interface FEPopupMenuController : UIViewController
 
-@property (nonatomic, strong) NSArray<FEPopupMenuItem *> *items;
+@property (nonatomic, strong) NSArray<FEPopupMenuItem *> * __nullable items;
 
 /**
  *  using FEPopupMenuItem init
  */
-- (instancetype)initWithItems:(NSArray<FEPopupMenuItem *> *)items;
+- (instancetype __nonnull)initWithItems:(NSArray<FEPopupMenuItem * > * __nonnull)items;
 
 /**
  *  popup the view controller
  */
-- (void)showInViewController:(UIViewController *)viewController atPosition:(CGPoint)position;
+- (void)showInViewController:(UIViewController * __nonnull)viewController atPosition:(CGPoint)position;
 
 /**
  *  dismiss the view controller

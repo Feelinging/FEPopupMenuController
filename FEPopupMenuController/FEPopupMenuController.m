@@ -22,7 +22,7 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
 
 @implementation FEPopupMenuController
 
--(instancetype)initWithItems:(NSArray *)items{
+-(instancetype)initWithItems:(NSArray<FEPopupMenuItem *> *)items {
     if (self = [super init]) {
         self.items = items;
         self.automaticDismiss = YES;
