@@ -1,0 +1,16 @@
+PODS:
+  - FEPopupMenuController (0.0.2)
+
+DEPENDENCIES:
+  - FEPopupMenuController (from `../`)
+
+EXTERNAL SOURCES:
+  FEPopupMenuController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FEPopupMenuController: a7b8314f723c39339160000d74cf7f4ae2760ed8
+
+PODFILE CHECKSUM: 319986901d1c140b4b3145392ee2beb065467c11
+
+COCOAPODS: 1.1.0.rc.2

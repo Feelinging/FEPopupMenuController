@@ -16,7 +16,10 @@
 }
 
 + (UINib *)nib{
-    return [UINib nibWithNibName:[self identifier] bundle:[NSBundle bundleForClass:[self class]]];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSURL *bundleURL = [bundle URLForResource:@"FEPopupResource" withExtension:@"bundle"];
+    UINib *nib = [UINib nibWithNibName:[self identifier] bundle:[NSBundle bundleWithURL:bundleURL]];
+    return nib;
 }
 
 -(void)configCellWithItem:(FEPopupMenuItem *)item{
