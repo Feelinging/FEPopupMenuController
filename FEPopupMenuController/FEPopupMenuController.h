@@ -61,7 +61,7 @@
 @property (nonatomic, assign) CGFloat contentViewCornerRadius;
 
 /**
- *  arrow view x position , default is 70% of contentViewWidth
+ *  arrow view x position , default is (contentViewWidth - 25.0)
  */
 @property (nonatomic, assign) CGFloat arrowX;
 

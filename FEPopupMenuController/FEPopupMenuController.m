@@ -33,7 +33,7 @@ static const CGFloat kDefaultArrowHeight = 7.0;
         self.contentViewPosition = CGPointMake(0,0);
         self.contentViewBackgroundColor = [UIColor whiteColor];
         self.contentViewCornerRadius = 8.0;
-        self.arrowX = self.contentViewWidth * 0.7;
+        self.arrowX = self.contentViewWidth - 25.0;
         self.isShowArrow = NO;
     }
     return self;
