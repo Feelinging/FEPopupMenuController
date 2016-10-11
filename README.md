@@ -10,6 +10,12 @@ A simple, elegant pop-up menu view
 - easy to customization
 - iOS7+
 
+### CocoaPods
+
+```
+pod 'FEPopupMenuController'
+```
+
 ### Useage
 
 first thing, import the main header file
@@ -91,12 +97,6 @@ you can customize everything
  */
 @property (nonatomic, assign) BOOL isShowArrow;
 
-```
-
-### CocoaPods
-
-```
-pod 'FEPopupMenuController'
 ```
 
 ### Licence
