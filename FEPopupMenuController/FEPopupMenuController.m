@@ -11,12 +11,15 @@
 #import "FEPopupMenuControllerAnimatedTransitioning.h"
 
 static const CGFloat kDefaultContentViewWidth = 130.0;
+static const CGFloat kDefaultArrowWeight = 10.0;
+static const CGFloat kDefaultArrowHeight = 7.0;
 
 @interface FEPopupMenuController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITapGestureRecognizer *tapBackgroundGestureRecognizer;
+@property (nonatomic, strong) UIView *arrowView;
 
 @end
 
@@ -30,6 +33,8 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
         self.contentViewPosition = CGPointMake(0,0);
         self.contentViewBackgroundColor = [UIColor whiteColor];
         self.contentViewCornerRadius = 8.0;
+        self.arrowX = self.contentViewWidth * 0.7;
+        self.isShowArrow = NO;
     }
     return self;
 }
@@ -50,18 +55,27 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
     self.contentView = [[UIView alloc] initWithFrame:CGRectMake(self.contentViewPosition.x,
                                                             self.contentViewPosition.y,
                                                             self.contentViewWidth,
-                                                            44 * [self.items count])];
-    self.contentView.layer.cornerRadius = self.contentViewCornerRadius;
-    self.contentView.clipsToBounds = YES;
+                                                            44 * [self.items count] + kDefaultArrowHeight)];
+
+    
+    // arrow
+    if (self.isShowArrow) {
+        self.arrowView.frame = CGRectMake(self.arrowX, 0, self.arrowView.bounds.size.width, self.arrowView.bounds.size.height);
+        [self.contentView addSubview:self.arrowView];
+    }
     
     // init TableView
-    self.tableView = [[UITableView alloc] initWithFrame:self.contentView.bounds];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kDefaultArrowHeight,
+                                                                   self.contentView.bounds.size.width,
+                                                                   self.contentView.bounds.size.height - kDefaultArrowHeight)];
     [self.tableView registerNib:[FEPopupMenuItemCell nib] forCellReuseIdentifier:[FEPopupMenuItemCell identifier]];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
     self.tableView.scrollEnabled = NO;
     self.tableView.backgroundColor = self.contentViewBackgroundColor;
+    self.tableView.layer.cornerRadius = self.contentViewCornerRadius;
+    self.tableView.clipsToBounds = YES;
     
     if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
         [self.tableView setSeparatorInset:UIEdgeInsetsZero];
@@ -183,6 +197,28 @@ static const CGFloat kDefaultContentViewWidth = 130.0;
     FEPopupMenuControllerAnimatedTransitioning * transitioning = [FEPopupMenuControllerAnimatedTransitioning new];
     //    transitioning.presenting = NO;
     return transitioning;
+}
+
+#pragma mark -
+
+- (UIView *)arrowView{
+    if (!_arrowView) {
+        // draw
+        CGSize size = CGSizeMake(kDefaultArrowWeight, kDefaultArrowHeight);
+        UIBezierPath *path = [[UIBezierPath alloc] init];
+        [path moveToPoint:CGPointMake(size.width / 2.0, 0)];
+        [path addLineToPoint:CGPointMake(0, size.height)];
+        [path addLineToPoint:CGPointMake(size.width, size.height)];
+        path.lineWidth = 1.0;
+        
+        CAShapeLayer *arrowLayer = [CAShapeLayer layer];
+        arrowLayer.path = path.CGPath;
+        
+        _arrowView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+        _arrowView.layer.mask = arrowLayer;
+        _arrowView.backgroundColor = self.contentViewBackgroundColor;
+    }
+    return _arrowView;
 }
 
 @end

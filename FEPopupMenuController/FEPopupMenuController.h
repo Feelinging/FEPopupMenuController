@@ -65,4 +65,14 @@
  */
 @property (nonatomic, strong) UIColor *itemTitleColor;
 
+/**
+ *  arrow view x position , default is 70% of contentViewWidth
+ */
+@property (nonatomic, assign) CGFloat arrowX;
+
+/**
+ *  arrow of top on content view show or hidden, default is NO (hidden)
+ */
+@property (nonatomic, assign) BOOL isShowArrow;
+
 @end

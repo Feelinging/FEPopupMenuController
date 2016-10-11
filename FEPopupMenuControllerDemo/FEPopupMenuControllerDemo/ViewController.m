@@ -53,7 +53,7 @@
  */
 - (CGPoint)calculateMenuShowPoint{
     // get a position on screen (top right corner)
-    return CGPointMake(CGRectGetWidth(self.view.frame) - self.popupMenuController.contentViewWidth - 20, 64 + 10);;
+    return CGPointMake(CGRectGetWidth(self.view.frame) - self.popupMenuController.contentViewWidth - 20, 64);;
 }
 
 @end

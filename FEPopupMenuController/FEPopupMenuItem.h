@@ -16,7 +16,7 @@ typedef void(^FEPopupMenuItemActionBlock)(void);
 /**
  *  init FEPopupMenuItem with title text and icon image
  */
-- (instancetype)initWithTitle:(NSString *)title iconImage:(UIImage *)iconImage action:(FEPopupMenuItemActionBlock)action;
+- (instancetype __nonnull)initWithTitle:(NSString *)title iconImage:(UIImage *)iconImage action:(FEPopupMenuItemActionBlock)action;
 
 /**
  *  title of item
