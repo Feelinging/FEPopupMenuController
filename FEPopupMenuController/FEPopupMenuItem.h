@@ -16,26 +16,26 @@ typedef void(^FEPopupMenuItemActionBlock)(void);
 /**
  *  init FEPopupMenuItem with title text and icon image
  */
-- (instancetype __nonnull)initWithTitle:(NSString *)title iconImage:(UIImage *)iconImage action:(FEPopupMenuItemActionBlock)action;
+- (instancetype __nonnull)initWithTitle:(NSString * __nonnull)title iconImage:(UIImage * __nonnull)iconImage action:(FEPopupMenuItemActionBlock __nullable)action;
 
 /**
  *  title of item
  */
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString * __nullable title;
 
 /**
  *  icon image of item
  */
-@property (nonatomic, strong) UIImage *iconImage;
+@property (nonatomic, strong) UIImage * __nullable iconImage;
 
 /**
  *  callback of item when selected
  */
-@property (nonatomic, copy) FEPopupMenuItemActionBlock action;
+@property (nonatomic, copy) FEPopupMenuItemActionBlock __nullable action;
 
 /**
  *  the color of title
  */
-@property (nonatomic, strong) UIColor *titleColor;
+@property (nonatomic, strong) UIColor * __nullable titleColor;
 
 @end

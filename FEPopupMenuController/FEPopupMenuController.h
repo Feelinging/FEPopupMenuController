@@ -53,7 +53,7 @@
 /**
  *  the content view background color, default is white
  */
-@property (nonatomic, strong) UIColor *contentViewBackgroundColor;
+@property (nonatomic, strong) UIColor * __nonnull contentViewBackgroundColor;
 
 /**
  *  the content view corner radius, default is 8.0
