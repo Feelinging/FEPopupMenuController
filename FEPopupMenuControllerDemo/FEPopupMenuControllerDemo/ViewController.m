@@ -26,7 +26,7 @@
     FEPopupMenuItem *item2 = [[FEPopupMenuItem alloc] initWithTitle:@"男生" iconImage:[UIImage imageNamed:@"homenear_icon_boy"] action:^{
         NSLog(@"selected item2...");
     }];
-    FEPopupMenuItem *item3 = [[FEPopupMenuItem alloc] initWithTitle:@"女生" iconImage:[UIImage imageNamed:@"homenear_icon_girl"] action:^{
+    FEPopupMenuItem *item3 = [[FEPopupMenuItem alloc] initWithTitle:@"女生女生" iconImage:[UIImage imageNamed:@"homenear_icon_girl"] action:^{
         NSLog(@"selected item3...");
     }];
     FEPopupMenuItem *item4 = [[FEPopupMenuItem alloc] initWithTitle:@"高级筛选" iconImage:nil action:^{
@@ -38,11 +38,6 @@
 -(void)viewDidLayoutSubviews{
     // for screen rotation
     [self.popupMenuController moveContentViewToPosition:[self calculateMenuShowPoint]];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /**

@@ -15,15 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageview;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
-/**
- *  if icon : priority high , else low
- */
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *icon2titleSpacingConstraint;
-
-/**
- *  if icon : priority low , else high
- */
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleXALignmentConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleXCenterConstraint;
 
 /**
  *  identifier for cell

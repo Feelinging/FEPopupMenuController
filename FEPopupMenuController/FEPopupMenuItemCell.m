@@ -11,12 +11,6 @@
 
 @implementation FEPopupMenuItemCell
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 +(NSString *)identifier{
     return @"FEPopupMenuItemCell";
 }
@@ -42,13 +36,11 @@
         self.iconImageview.image = item.iconImage;
         self.iconImageview.hidden = NO;
         
-        self.icon2titleSpacingConstraint.priority = 999.0;
-        self.titleXALignmentConstraint.priority = UILayoutPriorityDefaultHigh;
+        self.titleXCenterConstraint.constant = (15 + 10) / 2.0;
     }else{
         self.iconImageview.hidden = YES;
         
-        self.titleXALignmentConstraint.priority = 999.0;
-        self.icon2titleSpacingConstraint.priority = UILayoutPriorityDefaultHigh;
+        self.titleXCenterConstraint.constant = 0;
     }
 }
 
