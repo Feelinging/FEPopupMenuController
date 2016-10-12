@@ -11,17 +11,17 @@
 
 @interface FEPopupMenuController : UIViewController
 
-@property (nonatomic, strong) NSArray<FEPopupMenuItem *> * __nullable items;
+@property (nonnull, nonatomic, strong) NSArray<FEPopupMenuItem *> *items;
 
 /**
  *  using FEPopupMenuItem init
  */
-- (instancetype __nonnull)initWithItems:(NSArray<FEPopupMenuItem * > * __nonnull)items;
+- (nonnull instancetype)initWithItems:(nonnull NSArray<FEPopupMenuItem * > *)items;
 
 /**
  *  popup the view controller
  */
-- (void)showInViewController:(UIViewController * __nonnull)viewController atPosition:(CGPoint)position;
+- (void)showInViewController:(nonnull UIViewController *)viewController atPosition:(CGPoint)position;
 
 /**
  *  dismiss the view controller
@@ -53,7 +53,7 @@
 /**
  *  the content view background color, default is white
  */
-@property (nonatomic, strong) UIColor * __nonnull contentViewBackgroundColor;
+@property (nullable, nonatomic, strong) UIColor *contentViewBackgroundColor;
 
 /**
  *  the content view corner radius, default is 8.0
