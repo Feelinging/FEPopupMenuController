@@ -33,6 +33,11 @@
  */
 - (void)moveContentViewToPosition:(CGPoint)position;
 
+/**
+ *  the content table view
+ */
+@property (nonatomic, strong, readonly) UITableView *tableView;
+
 #pragma mark Custom Parameters
 
 /**
@@ -74,5 +79,10 @@
  *  the separator line color of each item, default is light grey (r:0.93,g:0.93,b:0.93)
  */
 @property (nullable, nonatomic, strong) UIColor *itemSeparatorLineColor;
+
+/**
+ *  the separator inset, default is zero (0,0,0,0)
+ */
+@property (nonatomic, assign) UIEdgeInsets itemSeparatorInset;
 
 @end

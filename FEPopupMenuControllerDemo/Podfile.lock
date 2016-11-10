@@ -1,5 +1,5 @@
 PODS:
-  - FEPopupMenuController (0.0.2)
+  - FEPopupMenuController (0.0.4)
 
 DEPENDENCIES:
   - FEPopupMenuController (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FEPopupMenuController: a7b8314f723c39339160000d74cf7f4ae2760ed8
+  FEPopupMenuController: 7a5322492ab89a2eaa88909261c49c371ff5d200
 
 PODFILE CHECKSUM: 319986901d1c140b4b3145392ee2beb065467c11
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.1.1

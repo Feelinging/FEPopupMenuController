@@ -17,7 +17,6 @@ static const CGFloat kDefaultArrowHeight = 7.0;
 @interface FEPopupMenuController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIView *contentView;
-@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITapGestureRecognizer *tapBackgroundGestureRecognizer;
 @property (nonatomic, strong) UIView *arrowView;
 
@@ -36,6 +35,7 @@ static const CGFloat kDefaultArrowHeight = 7.0;
         self.arrowX = self.contentViewWidth - 25.0;
         self.isShowArrow = NO;
         self.itemSeparatorLineColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1];
+        self.itemSeparatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     }
     return self;
 }
@@ -66,9 +66,9 @@ static const CGFloat kDefaultArrowHeight = 7.0;
     }
     
     // init TableView
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kDefaultArrowHeight,
-                                                                   self.contentView.bounds.size.width,
-                                                                   self.contentView.bounds.size.height - kDefaultArrowHeight)];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kDefaultArrowHeight,
+                                                               self.contentView.bounds.size.width,
+                                                               self.contentView.bounds.size.height - kDefaultArrowHeight)];
     [self.tableView registerNib:[FEPopupMenuItemCell nib] forCellReuseIdentifier:[FEPopupMenuItemCell identifier]];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -76,14 +76,8 @@ static const CGFloat kDefaultArrowHeight = 7.0;
     self.tableView.scrollEnabled = NO;
     self.tableView.backgroundColor = self.contentViewBackgroundColor;
     self.tableView.layer.cornerRadius = self.contentViewCornerRadius;
+    self.tableView.separatorInset = self.itemSeparatorInset;
     self.tableView.clipsToBounds = YES;
-    
-    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-        [self.tableView setSeparatorInset:UIEdgeInsetsZero];
-    }
-    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-        [self.tableView setLayoutMargins:UIEdgeInsetsZero];
-    }
     
     // contentView
     [self.contentView addSubview:self.tableView];
@@ -155,16 +149,6 @@ static const CGFloat kDefaultArrowHeight = 7.0;
     // exec item action
     if (item.action) {
         item.action();
-    }
-}
-
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-        [cell setSeparatorInset:UIEdgeInsetsZero];
-    }
-    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-        [cell setLayoutMargins:UIEdgeInsetsZero];
     }
 }
 
