@@ -70,4 +70,9 @@
  */
 @property (nonatomic, assign) BOOL isShowArrow;
 
+/**
+ *  the separator line color of each item, default is light grey (r:0.93,g:0.93,b:0.93)
+ */
+@property (nullable, nonatomic, strong) UIColor *itemSeparatorLineColor;
+
 @end

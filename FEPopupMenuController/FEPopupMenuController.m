@@ -35,6 +35,7 @@ static const CGFloat kDefaultArrowHeight = 7.0;
         self.contentViewCornerRadius = 8.0;
         self.arrowX = self.contentViewWidth - 25.0;
         self.isShowArrow = NO;
+        self.itemSeparatorLineColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1];
     }
     return self;
 }
@@ -71,7 +72,7 @@ static const CGFloat kDefaultArrowHeight = 7.0;
     [self.tableView registerNib:[FEPopupMenuItemCell nib] forCellReuseIdentifier:[FEPopupMenuItemCell identifier]];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.separatorColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
+    self.tableView.separatorColor = self.itemSeparatorLineColor;
     self.tableView.scrollEnabled = NO;
     self.tableView.backgroundColor = self.contentViewBackgroundColor;
     self.tableView.layer.cornerRadius = self.contentViewCornerRadius;
