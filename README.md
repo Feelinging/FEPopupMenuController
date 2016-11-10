@@ -1,4 +1,4 @@
-# FEPopupMenuController
+# FEPopupMenuController [![Version](https://img.shields.io/cocoapods/v/FEPopupMenuController.svg?style=flat)](http://cocoapods.org/pods/FEPopupMenuController) [![License](https://img.shields.io/cocoapods/l/FEPopupMenuController.svg?style=flat)](http://cocoapods.org/pods/FEPopupMenuController) [![Platform](https://img.shields.io/cocoapods/p/FEPopupMenuController.svg?style=flat)](http://cocoapods.org/pods/FEPopupMenuController)
 
 A simple, elegant pop-up menu view
 
